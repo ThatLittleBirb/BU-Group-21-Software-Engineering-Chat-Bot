@@ -10,7 +10,7 @@ This report is one part of the group submission. The source-code ZIP, video demo
 AI tools may be used but must be acknowledged. The core conversational functionality must be your team’s own structured-data and application-logic implementation, not provided by an LLM or external generative AI service. Optional AI-powered extensions must be integrated through the Express backend.
 
 PROJECT SUMMARY
-•	We chose Alfred Russel Wallace. We selected this figure because he is local to the area and is often overlooked in favour of Charles Darwin. The intended audience is people who want to know more about his contributions to evolutionary theory. :)
+•	We chose Alfred Russel Wallace. We selected this figure because he is local to the area and is often overlooked in favour of Charles Darwin. The intended audience is people who want to know more about his contributions to evolutionary theory.
 •	Summarise the main user interactions, including how the user’s choices or actions influence the progression of the experience.
 •	Introduce your overall solution (React frontend, Express backend and structured conversational data/logic), plus any distinctive features or optional extensions.
 
