@@ -24,20 +24,31 @@
 * List functional requirements that describe observable user or system behaviours. Give each a clear identifier and consider how you will verify it.
 * List specific, testable non-functional requirements for quality attributes such as usability, accessibility, responsiveness, performance, security, robustness and maintainability. Where relevant, reference measurable targets or standards.
 
-### Functional requirements
-* Organise requirements logically, grouping related features where appropriate.
-* Use consistent numbering (e.g., 1.1, 1.2, 2.1).
-* Ensure each requirement is atomic, clear and testable.
-* Provide a brief rationale for each requirement.
+## Functional requirements
+**Conversational Engine and Flow of Dialogue**
+* **F1-1.1 - Initialization:** Upon session startup, the system must load the initial conversation node from the JSON dialogue tree and display Wallace's greeting. 
+* **FR-1.2 - Different User Choices:** For every conversational choice, the frontend must render 2-4 different responses relevant to the context and response. 
+* **FR-1.3 - State-Driven Dynamic Progression:** For each user choice the choiceId and sessionState will be send to the backend, which evaluates and returns the next dialogue node, updated narrative, and unlocked topics. 
+* **FR-1.4 - Memory and Conditional Branching:** The backend must remember conversational flags (such as hasDiscussedDarwin: True) in session state so later dialogue branches dynamically. 
+* **FR-1.5 - Session History and Session Reset:** The user must be able to view a scrollable transcript of the conversational history and be able to reset the session to explore different narrative paths. 
+
+**Historical Context and Interactive Elements** 
+* **FR-2.1 - Lore and Unlockable Content:** Specific dialogue choices must unlock historical content surrounding Alfred's history which is stored in the JSON metadata. 
+* **FR-2.2 - Interactive Element Inspection:** The user must be able to click on any unlocked elements/rewards to read brief historical context without losing their place in the conversation. 
+
+**Frontend and Backend Integration**  
+* **FR-3.1 - Server-Side Logic:** Branches from dialogue choices must be processed on the express server rather than the exposed client-side code. 
 
 ### Non-functional requirements
+**Code Architecture and Quality** 
+* **NFR-1.1 - Metadata Expandability:** New dialogue branches, historical facts, or character reactions must be achievable by editing the JSON data files without modifying core React components or Express logic. 
+* **NFR-1.2 - Maintainability:** The code must adhere to consistent formatting rules and naming conventions for re-useability and readability. 
+---
 * Focus on quality attributes rather than system functionality (e.g., performance, usability, security, accessibility).
 * Ensure requirements are specific, measurable and testable, avoiding vague statements.
 * Reference relevant standards or guidelines where appropriate.
 * Provide a brief rationale for each requirement.
-
 ---
-
 ## DESIGN
 * Describe and justify the design you planned before implementation. Use clear, labelled diagrams or wireframes where they provide evidence; refer to them in the text.
 
