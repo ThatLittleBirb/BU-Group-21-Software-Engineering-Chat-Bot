@@ -5,9 +5,15 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "npm -w frontend run dev",
-    "build": "npm -w frontend run build",
-    "lint": "npm -w frontend run lint",
-    "preview": "npm -w frontend run preview"
+    "dev": "concurrently -n frontend,backend -c cyan,magenta \"npm -w frontend run dev\" \"npm -w backend run dev\"",
+    "dev:frontend": "npm -w frontend run dev",
+    "dev:backend": "npm -w backend run dev",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "preview": "npm run preview --workspaces --if-present",
+    "start": "npm run start --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
   }
 }
