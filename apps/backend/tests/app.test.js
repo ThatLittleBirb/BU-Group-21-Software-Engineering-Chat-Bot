@@ -1,8 +1,15 @@
+/**
+ * @fileoverview Integration tests for the Express application middleware and routing.
+ */
+
 import { describe, it, expect } from 'vitest'
 import request from 'supertest'
 import app from '../src/app.js'
 
 describe('Express app', () => {
+  /**
+   * Verifies that unknown routes return a 404 status and include the CORS allow-origin header.
+   */
   it('responds with 404 and CORS header on unknown routes', async () => {
     const res = await request(app).get('/unknown-route')
     expect(res.status).toBe(404)
